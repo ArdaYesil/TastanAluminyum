@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hizmet Detayları | Taştan Alüminyum</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* Specific styles for service details page */
+        .details-header {
+            padding: 120px 0 40px;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(13, 27, 42, 0.9) 0%, rgba(27, 38, 59, 0.9) 100%);
+            border-bottom: 1px solid var(--glass-border);
+        }
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 20px;
+            transition: var(--transition);
+        }
+        .back-btn:hover {
+            color: #fff;
+            transform: translateX(-5px);
+        }
+        .details-content {
+            padding: 60px 0 100px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        .service-info h2 {
+            font-size: 2.5rem;
+            color: var(--metallic-silver);
+            margin-bottom: 20px;
+        }
+        .service-info p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+        .price-box {
+            background: var(--card-bg);
+            border-left: 4px solid var(--accent-color);
+            padding: 25px;
+            border-radius: 0 12px 12px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        .price-box h4 {
+            color: #fff;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .price-box h4 i {
+            color: var(--accent-color);
+        }
+        .price-box p {
+            margin: 0;
+            font-size: 1.05rem;
+            color: var(--metallic-silver);
+            font-weight: 600;
+        }
+        .service-gallery img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: var(--shadow-soft);
+            object-fit: cover;
+            max-height: 500px;
+        }
+        
+        .examples-section {
+            padding-bottom: 100px;
+        }
+        .examples-title {
+            text-align: center;
+            font-size: 2rem;
+            color: var(--metallic-silver);
+            margin-bottom: 15px;
+        }
+        .examples-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        .examples-grid img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: var(--shadow-soft);
+            transition: var(--transition);
+        }
+        .examples-grid img:hover {
+            transform: scale(1.05);
+            box-shadow: var(--shadow-hover);
+        }
+
+        @media (max-width: 900px) {
+            .details-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .examples-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 600px) {
+            .examples-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar (Simplified) -->
+    <header id="navbar" class="scrolled">
+        <div class="container nav-content">
+            <div class="logo">
+                <a href="index.html">Taştan<span>Alüminyum</span></a>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html" class="contact-btn"><i class="fa-solid fa-arrow-left"></i> Ana Sayfaya Dön</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="details-header">
+        <div class="container">
+            <a href="index.html#services" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Hizmetlere Dön</a>
+            <h1 id="service-title">Hizmet Detayı</h1>
+        </div>
+    </div>
+
+    <!-- Details Section -->
+    <section class="container details-content">
+        <div class="service-gallery" id="service-gallery">
+            <!-- Dynamic img will be injected here -->
+        </div>
+        
+        <div class="service-info">
+            <p id="service-desc">Yükleniyor...</p>
+            
+            <div class="price-box" id="service-price-box">
+                <h4><i class="fa-solid fa-tag"></i> Fiyat Bilgisi</h4>
+                <p id="service-price">Yükleniyor...</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Examples Section -->
+    <section class="container examples-section">
+        <h2 class="examples-title">Örnekler</h2>
+        <div class="divider" style="margin: 0 auto 40px;"></div>
+        <div class="examples-grid" id="examples-grid">
+            <!-- Dynamic gallery images will be injected here -->
+        </div>
+    </section>
+
+    <!-- Footer Section (Identical to index.html) -->
+    <footer id="footer">
+        <div class="container footer-content">
+            <div class="footer-col brand-col">
+                <h3 class="footer-logo">Taştan<span>Alüminyum</span></h3>
+                <p>Profesyonel ekibimiz, birinci sınıf malzemelerimiz ve yılların verdiği tecrübeyle yaşam alanlarınıza
+                    değer katmaktan gurur duyuyoruz.</p>
+            </div>
+
+            <div class="footer-col address-col">
+                <h4 class="footer-heading">İletişim Bilgileri</h4>
+                <ul class="contact-list">
+                    <li>
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Soğuksu Mah. Adnan Menderes Cad. No:54/3<br>Kavak / Samsun</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-phone"></i>
+                        <a href="tel:+905000000000">+90 544 313 29 09</a>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-envelope"></i>
+                        <a href="mailto:info@tastanaluminyum.com">info@tastanaluminyum.com</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer-col social-col">
+                <h4 class="footer-heading">Bizi Takip Edin</h4>
+                <p>Kampanya ve yeni ürünlerimizden haberdar olmak için sosyal medya hesaplarımızı takip edebilirsiniz.
+                </p>
+                <div class="social-links">
+                    <a href="#" target="_blank" aria-label="Facebook Sayfamız" class="social-icon">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="#" target="_blank" aria-label="Instagram Sayfamız" class="social-icon">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 Taştan Alüminyum. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <i class="fa-solid fa-xmark lightbox-close" id="lightbox-close"></i>
+            <img src="" alt="Büyütülmüş Görsel" class="lightbox-img" id="lightbox-img">
+        </div>
+    </div>
+
+    <!-- Service Data JS -->
+    <script src="services-data.js"></script>
+</body>
+</html>
