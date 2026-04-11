@@ -359,7 +359,7 @@ header.scrolled {
 
 .service-card {
     background: var(--card-bg);
-    border: 1px solid var(--glass-border);
+    border: 1px solid #3a86ff; /* Kutuyu belirginleştiren mavi border */
     border-radius: 12px;
     padding: 40px 30px;
     text-align: center;
@@ -367,6 +367,7 @@ header.scrolled {
     position: relative;
     overflow: hidden;
     z-index: 1;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Kutuyu arkaplandan ayıran gölge */
 }
 
 /* Shine effect */
