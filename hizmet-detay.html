@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hizmet Detayları | Taştan Alüminyum</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='15' fill='%230d1b2a'/><rect x='15' y='15' width='30' height='70' rx='5' fill='%233a86ff' opacity='0.8'/><rect x='55' y='15' width='30' height='70' rx='5' fill='%233a86ff' opacity='0.8'/></svg>">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -164,6 +165,115 @@
             <div class="price-box" id="service-price-box">
                 <h4><i class="fa-solid fa-tag"></i> Fiyat Bilgisi</h4>
                 <p id="service-price">Yükleniyor...</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cam Balkon Calculator Section (Hidden by default) -->
+    <section class="container calculator-section" id="cambalkon-calculator" style="display: none;">
+        <div class="section-header">
+            <h2>Cam Balkon Simülasyonu</h2>
+            <div class="divider"></div>
+            <p>Ölçülerinizi ve tercihlerinizi girerek cam balkonunuzun nasıl görüneceğini anında görün.</p>
+        </div>
+        
+        <div class="calculator-grid">
+            <!-- Form Area -->
+            <div class="calc-form-area">
+                <div class="form-group row-group">
+                    <div class="input-wrap">
+                        <label for="cb-genislik"><i class="fa-solid fa-arrows-left-right"></i> Genişlik (cm)</label>
+                        <input type="number" id="cb-genislik" value="300" min="50" max="1500" step="10">
+                    </div>
+                    <div class="input-wrap">
+                        <label for="cb-yukseklik"><i class="fa-solid fa-arrows-up-down"></i> Yükseklik (cm)</label>
+                        <input type="number" id="cb-yukseklik" value="200" min="100" max="300" step="5">
+                    </div>
+                </div>
+                
+                <div class="form-group row-group">
+                    <div class="input-wrap">
+                        <label for="cb-camsayisi"><i class="fa-solid fa-table-columns"></i> Kanat Sayısı</label>
+                        <input type="number" id="cb-camsayisi" value="5" min="2" max="30">
+                    </div>
+                    <div class="input-wrap">
+                        <label for="cb-gorunum"><i class="fa-solid fa-eye"></i> Görünüm</label>
+                        <select id="cb-gorunum">
+                            <option value="3d" selected>3 Boyutlu Perspektif</option>
+                            <option value="top">Üstten Görünüm (Kroki)</option>
+                            <option value="free">Serbest Bakış (Manuel)</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label><i class="fa-solid fa-palette"></i> Alüminyum Rengi</label>
+                    <div class="color-options" id="color-options">
+                        <div class="color-btn active" data-color="#9ca3af" title="Eloksal (Gri)" style="background-color: #9ca3af; border-color: #777;"></div>
+                        <div class="color-btn" data-color="#3b3d42" title="Antrasit Gri" style="background-color: #3b3d42; border-color: #111;"></div>
+                        <div class="color-btn wood-texture" data-color="wood" title="Altın Meşe"></div>
+                        <div class="color-btn" data-color="#b08d57" title="Bronz" style="background-color: #b08d57; border-color: #8c6a38;"></div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label><i class="fa-solid fa-droplet"></i> Cam Rengi</label>
+                    <div class="color-options" id="glass-color-options">
+                        <div class="color-btn glass-btn active" data-glass="seffaf" title="Şeffaf" style="background: linear-gradient(135deg, rgba(255,255,255,0.4), rgba(255,255,255,0.1)); border-color: #aaa;"></div>
+                        <div class="color-btn glass-btn" data-glass="mavi" title="Mavi" style="background: linear-gradient(135deg, rgba(135,206,250,0.6), rgba(0,0,255,0.2)); border-color: #ccc;"></div>
+                        <div class="color-btn glass-btn" data-glass="fume" title="Füme" style="background: linear-gradient(135deg, rgba(100,100,100,0.7), rgba(0,0,0,0.5)); border-color: #111;"></div>
+                    </div>
+                </div>
+
+                <div class="form-group row-group">
+                    <div class="input-wrap">
+                        <label for="cb-kose"><i class="fa-solid fa-vector-square"></i> Şekil</label>
+                        <select id="cb-kose">
+                            <option value="duz">Düz / Cephe</option>
+                            <option value="kose" selected>L veya Köşeli Balkon</option>
+                        </select>
+                    </div>
+                    <div class="input-wrap" id="kose-derece-wrap">
+                        <label for="cb-kose-derece">Köşe Açısı</label>
+                        <select id="cb-kose-derece">
+                            <option value="90" selected>90 Derece (Dik L)</option>
+                            <option value="135">Geniş Açı (Kırık Tip)</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-group" id="kose-kanat-wrap">
+                    <label for="cb-kose-bolen">Dönüş Yeri (Hangi kanattan sonra köşe?)</label>
+                    <input type="number" id="cb-kose-bolen" value="3" min="1" max="29">
+                    <small class="hint">Örn: 3 yazarsanız soldan 3. camdan sonra balkon eğim/köşe yapar.</small>
+                </div>
+
+            </div>
+            
+            <!-- Result/Simulation Area -->
+            <div class="calc-result-area">
+                <div class="price-estimate-box">
+                    <i class="fa-solid fa-calculator"></i>
+                    <div class="price-text-group">
+                        <span class="price-title">Tahmini Tutar (M2 X 3500 TL)</span>
+                        <span class="price-value" id="price-estimate-value">-- TL</span>
+                    </div>
+                </div>
+                
+                <div class="sim-wrapper">
+                    <!-- Dimension Lines -->
+                    <div class="dim-line dim-w" id="dim-w"><span id="dim-w-text">300 cm</span></div>
+                    <div class="dim-line dim-h" id="dim-h"><span id="dim-h-text">200 cm</span></div>
+                    
+                    <div id="sim-container" class="sim-container corner-90">
+                        <!-- Dynamic rendering via JS -->
+                    </div>
+                </div>
+                
+                <div class="sim-overlay-info">
+                    <div class="info-badge"><span>Kanat:</span> <strong id="info-c">5</strong> adet</div>
+                    <div class="info-badge"><span>1 Cam Genişliği:</span> <strong id="info-cw">60</strong> cm</div>
+                </div>
             </div>
         </div>
     </section>
